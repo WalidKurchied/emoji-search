@@ -13,15 +13,19 @@ class App extends Component {
     this.filterEmojis();
   }
 
+  filterEmojis = (searchKeyword = null) => {
+    let maxEmojis = 0;
 
-  filterEmojis = (keyword = null) => {
-      const results = emojis.filter((emoji, index) => {
-        if ((!keyword || emoji.keywords.includes(keyword)) && index <= 20) {
-          return true;
-        }  
-      });
+    const results = emojis.filter(emoji => {        
+      if ((!searchKeyword || emoji.keywords.includes(searchKeyword)) && maxEmojis <= 20) {
+        maxEmojis++;
+        return true;
+      }  
 
-      this.setState({emojiList: results});
+      return false;
+    });
+
+    this.setState({emojiList: results});
   }
 
   render() {
