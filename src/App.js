@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Header from './components/Header';
+import SearchInput from './components/SearchInput';
+import EmojiResults from './components/EmojiResults';
+import emojis from './emojiList.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    emojiList: []
+  };
+
+  componentDidMount() {
+    this.filterEmojis();
+  }
+
+
+  filterEmojis = (keyword = null) => {
+      const results = emojis.filter((emoji, index) => {
+        if ((!keyword || emoji.keywords.includes(keyword)) && index <= 20) {
+          return true;
+        }  
+      });
+
+      this.setState({emojiList: results});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <SearchInput filterEmojis={this.filterEmojis} />
+        <EmojiResults emojiList={this.state.emojiList} />
+      </div>
+    );
+  }
 }
 
 export default App;

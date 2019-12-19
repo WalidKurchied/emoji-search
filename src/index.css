@@ -11,3 +11,95 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#header {
+  padding: 15px;
+}
+
+#emojiAppTitle {
+  display: inline;
+  margin: 0 15px;
+  color: #333;
+}
+
+.header-emoji {
+
+}
+
+
+#searchInputContainer {
+}
+
+#searchInput {
+  width: 95%;
+  height: 25px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+}
+
+#emojiResults {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.emoji-row {
+  padding: 15px 10px;
+  border-top: 1px solid #dcdcdc;
+  transition: background-color .3s;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.emoji-row:hover {
+  background-color: #f8f8ff;
+}
+
+.emoji-row:active {
+  background: #fff;
+}
+
+.emoji-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.emoji-title {
+  margin-left: 15px;
+}
+
+.copy-info {
+  display: none;
+  margin-left: auto;
+  color: #9c9c9c;
+}
+
+.emoji-row:hover .copy-info {
+  display: block;
+}
