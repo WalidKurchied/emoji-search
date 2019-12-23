@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   filterEmojis = (searchKeyword = null) => {
-    let maxEmojis = 0;
+    let maxEmojis = 1;
 
     const results = emojis.filter(emoji => {        
       if ((!searchKeyword || emoji.keywords.includes(searchKeyword)) && maxEmojis <= 20) {

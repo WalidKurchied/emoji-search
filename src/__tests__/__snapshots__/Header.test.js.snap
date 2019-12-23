@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> Should match snapshot 1`] = `
+<header
+  id="header"
+>
+  <img
+    alt="header emoji one"
+    className="header-emoji"
+    height="32"
+    src="//cdn.jsdelivr.net/emojione/assets/png/1f638.png"
+    width="32"
+  />
+  <h1
+    id="emojiAppTitle"
+  >
+    Emoji Search
+  </h1>
+  <img
+    alt="header emoji two"
+    className="header-emoji"
+    height="32"
+    src="//cdn.jsdelivr.net/emojione/assets/png/1f63a.png"
+    width="32"
+  />
+</header>
+`;
